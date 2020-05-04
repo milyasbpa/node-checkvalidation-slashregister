@@ -1,7 +1,10 @@
 const express =require('express');
 const app = express();
 const path = require('path');
-const hbs = require('express-handlebars')
+const hbs = require('express-handlebars');
+
+
+
 
 // import router
 const routes= require('./routes/index')
@@ -15,6 +18,7 @@ app.set('view engine','hbs')
 app.use('/',routes)
 // untuk tahu template css ada dimana
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 
 // listen server
