@@ -2,7 +2,8 @@ const express =require('express');
 const app = express();
 const path = require('path');
 const hbs = require('express-handlebars');
-
+const expressValidator = require('express-validator');
+const expressSession = require('express-session');
 
 
 
@@ -18,6 +19,9 @@ app.set('view engine','hbs')
 app.use('/',routes)
 // untuk tahu template css ada dimana
 app.use(express.static(path.join(__dirname, 'public')));
+// validasi dan sesi
+app.use(expressSession);
+app.use(expressValidator);
 
 
 
